@@ -36,7 +36,7 @@ void setup() {
 }
 
 void loop() {
-  String mensagem = "Nome: Vitor Binhotti";
+  String mensagem = "Vitor Binhotti: ";
   mensagem += "Oi";
   mqtt.publish("Topico-DSM14", mensagem.c_str());
   mqtt.loop();
