@@ -35,9 +35,20 @@ void setup() {
 }
 
 void loop() {
-  String mensagem = "Eduardo:  ";
-  mensagem += "Hello, world!";
-  mqtt.publish("Topico-DSM14" , mensagem.c_str());
+  mqtt.publish("Iluminacao" , "Acender");
   mqtt.loop();
   delay(1000);
+}
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  String msg = "";
+  for (int i = 0 < length, i++) {
+    msg += (char)payload[i];
+  }
+
+  in (topic == "Iluminacao" && ,sg == "Acender") {
+    digitalWrite(2, HIGH);
+  } else if (topic == "Iluminacao" && msg == "Apagar") {
+    digitalWrite (2, LOW);
+  }
 }
