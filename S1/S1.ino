@@ -43,7 +43,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     msg += (char)payload[i];
   }
 
-  in (topic == TOPIC_ILUM && ,sg == "Acender") {
+  if (topic == TOPIC_ILUM && ,msg == "Acender") {
     digitalWrite(2, HIGH);
   } else if (topic == TOPIC_ILUM && msg == "Apagar") {
     digitalWrite (2, LOW);
