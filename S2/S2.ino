@@ -35,6 +35,7 @@ void setup() {
 void loop() {
   mqtt.publish(TOPIC_ILUM, "Acender");
   mqtt.loop();
+  
   delay(1000);
 }
 
