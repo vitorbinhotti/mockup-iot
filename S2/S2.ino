@@ -56,10 +56,10 @@ long lerDistancia(byte triggerPin, byte echoPin) {
   delayMicroseconds(10);
   digitalWrite(triggerPin, LOW);
 
-  long duracao = pulseIn(echoPin, HIGH, 25000); 
+  long duracao = pulseIn(echoPin, HIGH, 20000); 
   if (duracao == 0) return -1; 
 
-  return duracao * 0.034 / 2;
+  return (long) duracao * 0.034 / 2;
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
