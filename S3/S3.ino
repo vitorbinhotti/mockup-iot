@@ -60,6 +60,7 @@ void setup() {
   mqtt.subscribe(TOPIC_PRESENCA1);
   mqtt.subscribe(TOPIC_PRESENCA2);
   mqtt.subscribe(TOPIC_PRESENCA3);
+  mqtt.subscribe(TOPIC_Distancia);
 }
 
 
@@ -135,12 +136,12 @@ Serial.print("TOPICO: "); Serial.println(topic);
       Serial.println("Servo2 → posição 1 (0°)");
     }
 
-    //SE A MENSAGEM CHEGOU NO TOPICO_PRE3, ELE GIRA O SERVO 1 E 2 PARA 90°
+    //SE A MENSAGEM CHEGOU NO TOPICO_PRE3, ELE GIRA O SERVO 1 E 2 PARA 180°
   }else if (strcmp(topic, TOPIC_PRESENCA3) == 0) {
     if (msg == "abrir") {
-      Servo1.write(90);
-      Servo2.write(90);
-      Serial.println("Servo1 e Servo2 → posição 2 (90°)");
+      Servo1.write(180);
+      Servo2.write(180);
+      Serial.println("Servo1 e Servo2 → posição 2 (180°)");
     }
   }
 }
